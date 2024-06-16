@@ -1,23 +1,14 @@
-.whole-navbar {
-    min-height: 20px;
-    height: 5vh;
-    // background-color: beige;
-    // border-color: black;
-    // border: .1rem solid;
+.flex-container {
+    min-height: 50px;
     font-family: 'Roboto';
-    font-size: 22px;
     font-size: 1rem;
     display: flex;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
-    // justify-content: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1)
 }
 
-.contents-navbar {
-    
+.each-content-navbar {
     padding: 1rem;
-
 
     &:hover {
         background-color: #fbe482;
@@ -28,20 +19,24 @@
     }
 }
 
-.navbar-text-column {
+.contents-navbar {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.column{
+.search-navbar {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.empty-column {
+    flex: 1;
+    display: flex;
+}
 
 .container {
     display: grid;
