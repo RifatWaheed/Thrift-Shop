@@ -1,0 +1,48 @@
+.whole-navbar {
+    min-height: 20px;
+    height: 5vh;
+    // background-color: beige;
+    // border-color: black;
+    // border: .1rem solid;
+    font-family: 'Roboto';
+    font-size: 22px;
+    font-size: 1rem;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    // justify-content: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1)
+}
+
+.contents-navbar {
+    
+    padding: 1rem;
+
+
+    &:hover {
+        background-color: #fbe482;
+        color: #595959;
+        cursor: pointer;
+        // opacity: 0.5;
+
+    }
+}
+
+.navbar-text-column {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container {
+    display: grid;
+}
