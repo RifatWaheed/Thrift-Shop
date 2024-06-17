@@ -1,4 +1,14 @@
-home-image img {
-    width: 20px !important;
-    height: 10px !important;
+.home-image-div{
+    display: flex;
+    justify-content: end;
+    height: 80vh !important;
+    background-color: #EDEBDF;
+;
+}
+
+.home-image {
+    width: 45% !important;
+    height: 80vh !important;
+    object-fit: cover;
+    object-position: 10% 35%;
 }
