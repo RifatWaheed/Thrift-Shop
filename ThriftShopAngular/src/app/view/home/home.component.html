@@ -1,3 +1,18 @@
-<div class="home-image-div">
-    <img class="home-image" src="assets/images/thriftShopLogo.png" >
+<div class="home-container">
+    <div class="carousel-div">
+        <div class="carousal-wrapper">
+            <ngb-carousel [interval] = "3000">
+                <ng-template ngbSlide *ngFor="let image of carouselImages">
+
+                    <img [src]="image.src" [alt]="image.alt" class="carousal-image" />
+
+                </ng-template>
+
+            </ngb-carousel>
+        </div>
+
+    </div>
+    <div class="home-image-div">
+        <img class="home-image" src="assets/images/thriftShopLogo.png">
+    </div>
 </div>

@@ -7,9 +7,21 @@
     </div>
 
     <div class=" contents-navbar">
-        <div class="each-content-navbar">HOME</div>
-        <div class="each-content-navbar">CATALOG</div>
-        <div class="each-content-navbar">CONTACT</div>
+        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="each-content-navbar">
+                HOME
+            </div>
+        </a>
+        <a routerLink="/categories" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="each-content-navbar">
+                CATEGORIES
+            </div>
+        </a>
+        <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="each-content-navbar">
+                CONTACT
+            </div>
+        </a>
     </div>
 
     <div class="search-navbar">
@@ -19,5 +31,7 @@
         </div>
 
     </div>
-    
+
 </div>
+
+<router-outlet></router-outlet>
