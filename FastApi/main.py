@@ -17,5 +17,5 @@ app.add_middleware(
 )
 
 @app.get("/contactInfo")
-async def read_data():
-    return {"message": "Hello, World!"}
+async def getContactInfo():
+    return {"message": "rifatwaheed@gmail.com"}
