@@ -1,0 +1,12 @@
+.box-container{
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 1rem;
+}
+
+.each-section-container{
+    min-width: fit-content;
+    min-height: fit-content ;
+    height: 20vh;
+    background: yellow;
+}
