@@ -1,12 +1,40 @@
-.box-container{
+// :host {
+//     background-color: #0000; /* Replace with your desired color */
+//   }
+  
+
+.admin-panel-body {
+    height: 90vh;
     display: flex;
-    font-family: 'Roboto';
-    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #252a2e;
+
+    margin-top: 0.5rem;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    // border: 1px solid #1d1f22; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+    border-radius: 3px; 
 }
 
-.each-section-container{
-    min-width: fit-content;
-    min-height: fit-content ;
-    height: 20vh;
-    background: yellow;
+.parent-wrapper-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-top: 18rem;
+    margin: auto;
+}
+
+.each-element-button {
+    // min-width: fit-content;
+    // min-height: fit-content;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+
 }

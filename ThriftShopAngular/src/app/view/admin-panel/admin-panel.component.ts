@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'adminPanel',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive,ButtonModule],
   templateUrl: './admin-panel.component.html',
   styleUrl: './admin-panel.component.scss'
 })
