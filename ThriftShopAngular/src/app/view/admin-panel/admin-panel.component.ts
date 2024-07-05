@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'adminPanel',
@@ -9,6 +9,16 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './admin-panel.component.html',
   styleUrl: './admin-panel.component.scss'
 })
-export class AdminPanelComponent {
+export class AdminPanelComponent implements OnInit {
 
+  constructor(
+    private router : Router,
+  ){}
+
+  ngOnInit(): void {
+  }
+
+  onProductsButtonClick(event:any){
+    this.router.navigate(['adminPanel/products']);
+  }
 }

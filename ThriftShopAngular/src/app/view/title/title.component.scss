@@ -1,0 +1,20 @@
+.title-container-band {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    width: 100vw;
+    color: white;
+    background-color: rgba(0, 175, 240, 0.3);
+    font-family: 'Roboto';
+    font-size: 1.7rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+    border-radius: 5px; 
+}
+
+.title-text{
+    padding-bottom: 0.3rem;
+    padding-left: 0.7rem;
+}

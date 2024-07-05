@@ -5,6 +5,18 @@
 @import "primeicons/primeicons.css";
 @import "primeng/resources/primeng.css";
 
+.home-container {
+    display: flex;
+    background-color: #252a2e;
+    height: 93vh;
+    margin-top: 0.5rem;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+    border-radius: 3px; 
+}
 
 .admin-panel-buttons {
     border-radius: 10px;

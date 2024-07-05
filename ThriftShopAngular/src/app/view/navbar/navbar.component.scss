@@ -7,18 +7,16 @@
     background: #252a2e;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), /* Deep shadow */
                 inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Light inner shadow */
-    border-radius: 4px; /* Optional: rounded corners for a softer look */
-    padding: 0 1rem; /* Optional: padding for inner spacing */
+    border-radius: 4px; 
+    padding: 0 1rem;
 }
 
 .each-content-navbar {
     padding: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Add transition */
 
     &:hover {
         background-color: rgba(0, 175, 240, 0.9);
-        /* Decrease opacity */
         color: #303030;
         cursor: pointer;
         transform: translateX(2px) translateX(-2px);

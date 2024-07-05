@@ -5,18 +5,10 @@ import { ProductsComponent } from './view/admin-panel/products/products.componen
 import { AdminPanelComponent } from './view/admin-panel/admin-panel.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'contact', component: ContactComponent },
+  { path: '', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'adminPanel', component: AdminPanelComponent, },
+  { path: 'adminPanel/products', component: ProductsComponent, },
 
-    {
-        path: 'adminPanel',
-        component: AdminPanelComponent,
-        children: [
-            {
-              path: 'products',
-              component: ProductsComponent, 
-            },
-          ],
-    },
 
 ];
