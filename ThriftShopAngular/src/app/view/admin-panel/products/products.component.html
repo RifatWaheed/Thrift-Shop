@@ -1,25 +1,30 @@
 <app-title [title]="'Products'"></app-title>
 
 <div class="home-container">
-    <div>
-        <p-table [value]="products" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+    <div class="primeng-table-div">
+        <p-table [value]="products" [resizableColumns]="true" columnResizeMode="expand"
+            styleClass="p-datatable-gridlines p-datatable-sm" [paginator]="true" [rows]="5"
+            [tableStyle]="{ 'min-width': '50rem' }" [rowsPerPageOptions]="[5, 10, 20]" class="gridline-table">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
+                    <th pResizableColumn>Code</th>
+                    <th pResizableColumn>Name</th>
+                    <th pResizableColumn>Category</th>
+                    <th pResizableColumn>Quantity</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-product>
                 <tr>
-                    <td>{{ product.code }}</td>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.category }}</td>
-                    <td>{{ product.quantity }}</td>
+                    <td>{{product.code}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.quantity}}</td>
                 </tr>
             </ng-template>
         </p-table>
     </div>
+
+
+
 
 </div>

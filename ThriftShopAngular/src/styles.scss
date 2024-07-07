@@ -4,18 +4,20 @@
 @import 'bootstrap/scss/bootstrap';
 @import "primeicons/primeicons.css";
 @import "primeng/resources/primeng.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 
 .home-container {
     display: flex;
     background-color: #252a2e;
     height: 93vh;
     // margin-top: 0.5rem;
-    
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1); 
-    border-radius: 3px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
 }
 
 .admin-panel-buttons {
@@ -40,8 +42,29 @@
 
 .admin-panel-buttons .pi {
     font-size: 1.5rem;
-    color: rgba(0, 175, 240, 0.9) ;
+    color: rgba(0, 175, 240, 0.9);
 
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.p-datatable-gridlines tbody>tr>td,
+.p-datatable-gridlines thead>tr>th {
+    border: 1px solid rgb(119, 119, 119);
+}
+
+
+.p-datatable-gridlines thead>tr>th{
+    background-color:rgb(63, 63, 63);
+    color: white;
+}
