@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactInfoService {
 
-  private contactInfoURL = 'http://127.0.0.1:8000/contactInfo'; // Replace with your API URL
+  private contactInfoURL = 'http://127.0.0.1:8000/contactInfo/getAllContactInfos'; // Replace with your API URL
 
   constructor(private http: HttpClient) { }
 
