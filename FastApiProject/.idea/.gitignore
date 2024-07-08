@@ -1,3 +1,25 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Virtual Environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.sqlite3
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.env
+
+# OS Files
+.DS_Store
+Thumbs.db
