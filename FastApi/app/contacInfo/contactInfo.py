@@ -21,7 +21,7 @@ def getAllContactInfos(db: Session = Depends(get_db)):
 
 @router.post("/getContactInfoByID", response_model=schemas.ContactInfo)
 def getContactInfoByID(req: schemas.GetContactInfoByIDRequestModel, db: Session = Depends(get_db)):
-    resp = db.query(models.ContactInfo).filter(models.ContactInfo.pk_id == req.pkID).first()
+    resp = db.query(models.ContactInfo).filter(models.ContactInfo.pkID == req.pkID).first()
     if not resp:
         raise HTTPException(status_code=404, detail=f"ContactInfo with {req.pkID} not found")
     return resp

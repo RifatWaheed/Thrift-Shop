@@ -7,10 +7,10 @@ class ContactInfoBase(BaseModel):
     email: Optional[str] = None
 
 class ContactInfoCreate(ContactInfoBase):
-    pkID: int  # Assuming this field is required for the search operation
+    pass  # Assuming this field is required for the search operation
 
 class ContactInfo(ContactInfoBase):
-    pk_id: int
+    pkID: int
 
 
     class Config:

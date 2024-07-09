@@ -1,9 +1,9 @@
 from typing import Union
 from fastapi import FastAPI
-from app.contacInfo import models,schemas
+from app.contacInfo import models as contactInfoModel
 from app.contacInfo import contactInfo as contacInfoApi
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.database import engine
 
 app = FastAPI()
 
@@ -15,6 +15,8 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods (GET, POST, PUT, DELETE, etc.)
     allow_headers=["*"],  # Allows all headers
 )
+
+contactInfoModel.Base.metadata.create_all(bind=engine)
 
 app.include_router(contacInfoApi.router)
 
