@@ -2,6 +2,7 @@ from typing import Union
 from fastapi import FastAPI
 from app.contacInfo import models as contactInfoModel
 from app.contacInfo import contactInfo as contacInfoApi
+from app.products import products as productsApi
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
 
@@ -19,16 +20,11 @@ app.add_middleware(
 contactInfoModel.Base.metadata.create_all(bind=engine)
 
 app.include_router(contacInfoApi.router)
+app.include_router(productsApi.router)
+
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-
-@app.get("/contactInfo")
-def contactInfo():
-    return {"contactInfo Api"}
