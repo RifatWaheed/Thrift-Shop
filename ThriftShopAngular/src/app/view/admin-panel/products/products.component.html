@@ -1,7 +1,35 @@
-<app-title [title]="'Products'"></app-title>
+<div class="product-container">
+    <app-title [title]="'Products'"></app-title>
 
-<div class="home-container">
-    <div class="primeng-table-div">
+    <div class="inputs-container">
+        <div class="custom-row">
+            <div class="custom-col">
+                <label class="input-label" for="username">Username</label>
+                <input class="input-field" pInputText id="username" [(ngModel)]="value" />
+            </div>
+            <div class="custom-col">
+                <label class="input-label" for="username">Username</label>
+                <input class="input-field" pInputText id="username" [(ngModel)]="value" />
+            </div>
+            <div class="custom-col">
+                <label class="input-label" for="username">Username</label>
+                <input class="input-field" pInputText id="username" [(ngModel)]="value" />
+            </div>
+            <div class="custom-col">
+                <label class="input-label" for="username">Username</label>
+                <p-dropdown [options]="products" [(ngModel)]="selectedProduct"  placeholder="Select a Category"
+                    [editable]="true" optionLabel="name" class="custom-dropdown"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-1">
+        <button pButton pRipple label="Add New" icon="pi pi-plus"
+            class="p-button-primary p-button-raised action-buttons ">
+        </button>
+    </div>
+
+    <div class="primeng-table-div mt-1">
         <p-table [value]="products" [resizableColumns]="true" columnResizeMode="expand"
             styleClass="p-datatable-gridlines p-datatable-sm" [paginator]="true" [rows]="5"
             [tableStyle]="{ 'min-width': '50rem' }" [rowsPerPageOptions]="[5, 10, 20]" class="gridline-table">

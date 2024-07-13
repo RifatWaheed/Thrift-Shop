@@ -7,6 +7,48 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
+//================================= Primeng DropDown Changes =================================================
+.custom-dropdown .p-dropdown-label {
+    height: 25px; 
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* Customize the editable input */
+.custom-dropdown .p-dropdown-label-container input {
+    height: 25px; 
+    font-size: 14px; 
+    line-height: 30px;
+}
+
+/* Remove the left gap in the dropdown items */
+.custom-dropdown .p-dropdown-items .p-dropdown-item {
+    padding: 0 1em;  
+    margin: 0;  
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure the dropdown panel is styled correctly */
+.custom-dropdown .p-dropdown-panel {
+    padding: 0;  /* Remove padding if needed */
+}
+
+/* Remove padding from ul elements inside the dropdown */
+.custom-dropdown .p-dropdown-items {
+    padding-left: 0 !important; 
+    margin-left: 0 !important;  
+    list-style-type: none; /* Remove default list styling */
+}
+
+.custom-dropdown .p-dropdown-items li {
+    padding-left: 1rem !important; 
+    margin-left: 0 !important; 
+    list-style-type: none; 
+}
+//================================= Primeng DropDown Changes =================================================
+
 .home-container {
     display: flex;
     background-color: #252a2e;
@@ -46,7 +88,15 @@
 
 }
 
+.action-buttons {
+    border-radius: 5px;
 
+}
+
+.action-buttons {
+    border-radius: 5px;
+
+}
 
 html,
 body {
@@ -68,3 +118,37 @@ body {
     background-color:rgb(63, 63, 63);
     color: white;
 }
+
+.input-label{
+color: white;
+}
+
+.input-field{
+    height: 1.5rem;
+}
+
+.inputs-container{
+    display: flex;
+    width: 100%;
+}
+
+.custom-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.custom-col{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 4px;
+}
+
+
+
+
+
+
+
+
+
