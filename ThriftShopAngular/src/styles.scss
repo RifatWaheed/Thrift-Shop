@@ -9,7 +9,7 @@
 
 //================================= Primeng DropDown Changes =================================================
 .custom-dropdown .p-dropdown-label {
-    height: 25px; 
+    height: 27px;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -17,36 +17,39 @@
 
 /* Customize the editable input */
 .custom-dropdown .p-dropdown-label-container input {
-    height: 25px; 
-    font-size: 14px; 
+    height: 27px;
+    font-size: 14px;
     line-height: 30px;
 }
 
 /* Remove the left gap in the dropdown items */
 .custom-dropdown .p-dropdown-items .p-dropdown-item {
-    padding: 0 1em;  
-    margin: 0;  
+    padding: 0 1em;
+    margin: 0;
     display: flex;
     align-items: center;
 }
 
 /* Ensure the dropdown panel is styled correctly */
 .custom-dropdown .p-dropdown-panel {
-    padding: 0;  /* Remove padding if needed */
+    padding: 0;
+    /* Remove padding if needed */
 }
 
 /* Remove padding from ul elements inside the dropdown */
 .custom-dropdown .p-dropdown-items {
-    padding-left: 0 !important; 
-    margin-left: 0 !important;  
-    list-style-type: none; /* Remove default list styling */
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    list-style-type: none;
+    /* Remove default list styling */
 }
 
 .custom-dropdown .p-dropdown-items li {
-    padding-left: 1rem !important; 
-    margin-left: 0 !important; 
-    list-style-type: none; 
+    padding-left: 1rem !important;
+    margin-left: 0 !important;
+    list-style-type: none;
 }
+
 //================================= Primeng DropDown Changes =================================================
 
 .home-container {
@@ -62,6 +65,8 @@
     border-radius: 3px;
 }
 
+
+// ================= Primeng Buttons CSS modified ==========================================
 .admin-panel-buttons {
     border-radius: 10px;
     font-size: 1.5rem;
@@ -88,15 +93,22 @@
 
 }
 
-.action-buttons {
-    border-radius: 5px;
-
-}
 
 .action-buttons {
     border-radius: 5px;
+    height: 35px;
+    font-size: 0.8rem;
+    min-width: 160px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 
 }
+
+.action-buttons .pi{
+    font-size: 0.9rem;
+    
+}
+
+// ================= Primeng Buttons CSS modified ==========================================
 
 html,
 body {
@@ -108,47 +120,97 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+
+
+// <=================================== Primeng Table CSS modified ==========================================>
+
 .p-datatable-gridlines tbody>tr>td,
 .p-datatable-gridlines thead>tr>th {
     border: 1px solid rgb(119, 119, 119);
 }
 
 
-.p-datatable-gridlines thead>tr>th{
-    background-color:rgb(63, 63, 63);
+.p-datatable-gridlines thead>tr>th {
+    background-color: rgb(63, 63, 63);
     color: white;
 }
+// <=================================== Primeng Table CSS modified ==========================================>
 
-.input-label{
-color: white;
+
+//<======================================= Responsive grid layout ==============================================>
+.input-label {
+    color: white;
+    font-weight: 300; 
+    display: block;
+    margin-bottom: 1px; 
+    font-weight: 300;
 }
 
-.input-field{
-    height: 1.5rem;
-}
-
-.inputs-container{
-    display: flex;
+.input-field {
+    height: 1.8rem;
     width: 100%;
+    // box-sizing: border-box;
 }
 
-.custom-row{
-    display: flex;
-    flex-direction: row;
+/* Ensure label is displayed as a block element */
+.inputs-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
 }
 
-.custom-col{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin-left: 4px;
+.custom-row {
+    display: contents;
 }
 
+.custom-col-2 { grid-column: span 2; }
+.custom-col-3 { grid-column: span 3; }
+.custom-col-4 { grid-column: span 4; }
+.custom-col-6 { grid-column: span 6; }
+.custom-col-8 { grid-column: span 8; }
+.custom-col-9 { grid-column: span 9; }
+.custom-col-10 { grid-column: span 10; }
+.custom-col-12 { grid-column: span 12; }
 
+/* Medium screens */
+@media (min-width: 768px) {
+    .md\:custom-col-2 { grid-column: span 2; }
+    .md\:custom-col-3 { grid-column: span 3; }
+    .md\:custom-col-4 { grid-column: span 4; }
+    .md\:custom-col-6 { grid-column: span 6; }
+    .md\:custom-col-8 { grid-column: span 8; }
+    .md\:custom-col-9 { grid-column: span 9; }
+    .md\:custom-col-10 { grid-column: span 10; }
+    .md\:custom-col-12 { grid-column: span 12; }
+}
 
+/* Large screens */
+@media (min-width: 992px) {
+    .lg\:custom-col-2 { grid-column: span 2; }
+    .lg\:custom-col-3 { grid-column: span 3; }
+    .lg\:custom-col-4 { grid-column: span 4; }
+    .lg\:custom-col-6 { grid-column: span 6; }
+    .lg\:custom-col-8 { grid-column: span 8; }
+    .lg\:custom-col-9 { grid-column: span 9; }
+    .lg\:custom-col-10 { grid-column: span 10; }
+    .lg\:custom-col-12 { grid-column: span 12; }
+}
 
+/* Extra large screens */
+@media (min-width: 1200px) {
+    .xl\:custom-col-2 { grid-column: span 2; }
+    .xl\:custom-col-3 { grid-column: span 3; }
+    .xl\:custom-col-4 { grid-column: span 4; }
+    .xl\:custom-col-6 { grid-column: span 6; }
+    .xl\:custom-col-8 { grid-column: span 8; }
+    .xl\:custom-col-9 { grid-column: span 9; }
+    .xl\:custom-col-10 { grid-column: span 10; }
+    .xl\:custom-col-12 { grid-column: span 12; }
+}
+//<======================================= Responsive grid layout ==============================================>
 
-
-
-
-
+.card {
+    background-color: #252a2e;
+    margin: 1rem;
+    padding: 1rem;;
+}
