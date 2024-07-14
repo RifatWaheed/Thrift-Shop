@@ -9,6 +9,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { TagModule } from 'primeng/tag';
+import { IconField, IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 interface City {
   name: string;
@@ -18,7 +22,7 @@ interface City {
 @Component({
   selector: 'products',
   standalone: true,
-  imports: [TitleComponent, TableModule, CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ButtonModule, InputTextModule, FloatLabelModule, FormsModule, DropdownModule],
+  imports: [TitleComponent, TableModule, CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ButtonModule, InputTextModule, FloatLabelModule, FormsModule, DropdownModule, TagModule, IconFieldModule, InputIconModule, MultiSelectModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -84,5 +88,13 @@ export class ProductsComponent implements OnInit {
       { name: 'Istanbul', code: 'IST' },
       { name: 'Paris', code: 'PRS' }
     ];
+  }
+
+  onEditButtonClick(data){
+    console.log(data);
+  }
+
+  onDeleteButtonClick(data){
+    console.log(data);
   }
 }

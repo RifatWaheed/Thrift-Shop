@@ -9,7 +9,7 @@
                     <input class="input-field" pInputText id="productName1" [(ngModel)]="value" />
                 </div>
                 <div class="custom-col-12 md:custom-col-6 lg:custom-col-2 xl:custom-col-2">
-                    <label class="input-label" for="productName2">Product Name</label>
+                    <label class="input-label" for="productName2">Code</label>
                     <input class="input-field" pInputText id="productName2" [(ngModel)]="value" />
                 </div>
                 <div class="custom-col-12 md:custom-col-6 lg:custom-col-2 xl:custom-col-2">
@@ -17,75 +17,82 @@
                     <p-dropdown [options]="products" [(ngModel)]="selectedProduct" placeholder="Select a Category"
                         [editable]="true" optionLabel="name" class="custom-dropdown" />
                 </div>
-                <div class="custom-col-12 md:custom-col-6 lg:custom-col-6 xl:custom-col-6 d-flex align-items-end justify-content-end " >
-                    <button pButton pRipple label="Add New" icon="pi pi-plus"
+                <div
+                    class="custom-col-12 md:custom-col-6 lg:custom-col-6 xl:custom-col-6 d-flex align-items-end justify-content-end ">
+                    <button pButton pRipple label="Load Data" icon="pi pi-chevron-circle-down"
                         class="p-button-primary p-button-raised action-buttons">
                     </button>
                 </div>
 
-
-            <!-- <div class="custom-col">
-                    <label class="input-label" for="username">Code</label>
-                    <input class="input-field" pInputText id="username" [(ngModel)]="value" />
-                </div>
-                <div class="custom-col">
-                    <label class="input-label" for="username">Stock Quantity</label>
-                    <input class="input-field" pInputText id="username" [(ngModel)]="value" />
-                </div>
-                <div class="custom-col">
-                    <label class="input-label" for="username">Category</label>
-                    <p-dropdown [options]="products" [(ngModel)]="selectedProduct" placeholder="Select a Category"
-                        [editable]="true" optionLabel="name" class="custom-dropdown" />
-                </div>
-                <div class="d-flex align-items-center justify-content-end custom-col mt-3">
-                    <div class="me-2">
-                        <button pButton pRipple label="Add New" icon="pi pi-plus"
-                            class="p-button-primary p-button-raised action-buttons">
-                        </button>
-                    </div>
-                </div> -->
+            </div>
         </div>
-    </div>
 
 
-    <div class="primeng-table-div mt-3">
-        <p-table [value]="products" [resizableColumns]="true" columnResizeMode="expand"
-            styleClass="p-datatable-gridlines p-datatable-sm" [paginator]="true" [rows]="5"
-            [tableStyle]="{ 'min-width': '50rem' }" [rowsPerPageOptions]="[5, 10, 20]" class="gridline-table">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th pResizableColumn>Code</th>
-                    <th pResizableColumn>Name</th>
-                    <th pResizableColumn>Category</th>
-                    <th pResizableColumn>Stock Qty</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-product>
-                <tr>
-                    <td>{{product.code}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.category}}</td>
-                    <td>{{product.quantity}}</td>
-                </tr>
-            </ng-template>
-        </p-table>
-    </div>
+        <div class="primeng-table-div mt-3">
+            <p-table [value]="products" [resizableColumns]="true" columnResizeMode="expand"
+                styleClass="p-datatable-gridlines p-datatable-sm" [paginator]="true" [rows]="5"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                sortMode="multiple"
+                [showCurrentPageReport]="true"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [rowsPerPageOptions]="[5, 10, 20]" class="gridline-table"
+                [globalFilterFields]="['code', 'name', 'quantity']"
 
-    <div class="d-flex align-items-center justify-content-end mt-3">
-        <div class="me-2"> <!-- me-2 is a Bootstrap margin-end utility class -->
-            <button pButton pRipple label="Add New" icon="pi pi-plus"
-                class="p-button-primary p-button-raised action-buttons">
-            </button>
+                >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pResizableColumn>Code</th>
+                        <th pResizableColumn>Name</th>
+                        <th pResizableColumn>Category</th>
+                        <th pResizableColumn>Stock Qty</th>
+                        <th pResizableColumn>Edit</th>
+                        <th pResizableColumn>Del</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>{{product.code}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>
+                            <button class="table-column-buttons"
+                                type="button" 
+                                pButton 
+                                pRipple 
+                                icon="pi pi-pencil" 
+                                (click)="onEditButtonClick(product)">
+                            </button>
+                        </td>
+                        <td>
+                            <button class="table-column-buttons p-button-danger"
+                                type="button" 
+                                pButton 
+                                pRipple 
+                                icon="pi pi-trash" 
+                                (click)="onDeleteButtonClick(product)">
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </div>
-        <div>
-            <button pButton pRipple label="Close" icon="pi pi-times"
-                class="p-button-secondary p-button-raised action-buttons">
-            </button>
+
+        <div class="d-flex align-items-center justify-content-end mt-3">
+            <div class="me-2"> <!-- me-2 is a Bootstrap margin-end utility class -->
+                <button pButton pRipple label="Add New" icon="pi pi-plus"
+                    class="p-button-success p-button-raised action-buttons add-new-button">
+                </button>
+            </div>
+            <div>
+                <button pButton pRipple label="Close" icon="pi pi-times"
+                    class="p-button-secondary p-button-raised action-buttons ">
+                </button>
+            </div>
         </div>
+
+
+
     </div>
-
-
-
-</div>
 
 </div>

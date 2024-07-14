@@ -214,3 +214,23 @@ body {
     margin: 1rem;
     padding: 1rem;;
 }
+
+.add-new-button{
+    background-color: #008d18;
+    border-color: #008d18;
+}
+
+.add-new-button:hover{
+    background-color: #006912;
+    border-color: #006912;
+}
+
+.table-column-buttons{
+    border-radius: 5px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.table-column-buttons .pi{
+    font-size: 0.8rem;
+}
