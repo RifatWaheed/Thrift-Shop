@@ -15,7 +15,7 @@
                 <div class="custom-col-12 md:custom-col-6 lg:custom-col-2 xl:custom-col-2">
                     <label class="input-label" for="username">Category</label>
                     <p-dropdown [options]="products" [(ngModel)]="selectedProduct" placeholder="Select a Category"
-                        [editable]="true" optionLabel="name" class="custom-dropdown" />
+                        [editable]="true" optionLabel="name" class="custom-dropdown" (onClick)="onDropDownSelectionChange()"/>
                 </div>
                 <div
                     class="custom-col-12 md:custom-col-6 lg:custom-col-6 xl:custom-col-6 d-flex align-items-end justify-content-end ">
@@ -49,19 +49,19 @@
                         <th pResizableColumn>Del</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-product>
+                <ng-template pTemplate="body" let-dataItem>
                     <tr>
-                        <td>{{product.code}}</td>
-                        <td>{{product.name}}</td>
-                        <td>{{product.category}}</td>
-                        <td>{{product.quantity}}</td>
+                        <td>{{dataItem.code}}</td>
+                        <td>{{dataItem.name}}</td>
+                        <td>{{dataItem.category}}</td>
+                        <td>{{dataItem.quantity}}</td>
                         <td>
                             <button class="table-column-buttons"
                                 type="button" 
                                 pButton 
                                 pRipple 
                                 icon="pi pi-pencil" 
-                                (click)="onEditButtonClick(product)">
+                                (click)="onEditButtonClick(dataItem)">
                             </button>
                         </td>
                         <td>
@@ -70,7 +70,7 @@
                                 pButton 
                                 pRipple 
                                 icon="pi pi-trash" 
-                                (click)="onDeleteButtonClick(product)">
+                                (click)="onDeleteButtonClick(dataItem)">
                             </button>
                         </td>
                     </tr>

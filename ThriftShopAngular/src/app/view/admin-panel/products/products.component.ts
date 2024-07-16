@@ -13,6 +13,7 @@ import { TagModule } from 'primeng/tag';
 import { IconField, IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { Product } from '../../../models/product/product';
 
 interface City {
   name: string;
@@ -28,7 +29,7 @@ interface City {
 })
 export class ProductsComponent implements OnInit {
 
-
+  dummProduct : Product = null
 
   value
 
@@ -88,6 +89,11 @@ export class ProductsComponent implements OnInit {
       { name: 'Istanbul', code: 'IST' },
       { name: 'Paris', code: 'PRS' }
     ];
+  }
+
+
+  onDropDownSelectionChange(){
+    console.log(this.selectedProduct);
   }
 
   onEditButtonClick(data){
