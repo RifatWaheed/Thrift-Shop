@@ -1,5 +1,5 @@
 from app.database import Base
-from sqlalchemy import Column, Integer, String, BigInteger, Boolean,DateTime
+from sqlalchemy import Column, Integer, String, BigInteger, Boolean, DateTime
 from sqlalchemy.sql import func
 
 
@@ -8,6 +8,7 @@ class Product(Base):
 
     pkID = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
+    skuCode = Column(String, nullable=False)
     price = Column(Integer, nullable=False)
     stockQty = Column(BigInteger, nullable=False, default=0)
     categoryID = Column(Integer, nullable=False)

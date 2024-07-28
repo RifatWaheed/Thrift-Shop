@@ -4,7 +4,6 @@ from datetime import datetime
 # Define the BaseModel with common fields
 class BaseClass(PydanticBaseModel):
     pkID: int
-    name: str
 
 # Define the AuditTrailModel with audit fields
 class AuditTrailModel(PydanticBaseModel):
@@ -16,6 +15,7 @@ class AuditTrailModel(PydanticBaseModel):
     modifiedByName: str | None = None
     
 class ProductBaseModel(PydanticBaseModel):
+    name: str
     price: int
     stockQty: int
     categoryID: int
