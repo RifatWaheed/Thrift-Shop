@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -20,7 +21,7 @@ export class LoginComponent {
   isConfirmPasswordVisible: boolean = false;
 
   isPasswordFocus: boolean = false;
-
+  password : string = '';
   hintText: string = "Required 1 uppercase, 1 digit and 8 characters min";
   constructor() {
 
@@ -44,6 +45,7 @@ export class LoginComponent {
       this.userStateText = "New user? ";
       this.toggleTitle = "Sign up";
     }
+    this.password  = '';
   }
 
   onShowPasswordClicked() {
