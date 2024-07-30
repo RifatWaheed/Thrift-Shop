@@ -1,0 +1,123 @@
+.container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252a2e;
+    margin-top: 0.5rem;
+    padding: 0 50vw;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+    border-radius: 3px;
+}
+.signin{
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+}
+.signin h2{
+    font-weight: 600;
+    background-color: #1A5268;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: white;
+}
+.portal{
+    background-color: #252a2e;
+    padding: 2rem 5rem;
+}
+.input{
+    margin: 2rem 0;
+    display: flex;
+}
+.input:nth-child(2){
+    margin-bottom: 1rem;
+}
+.icon{
+    height: 40px;
+    width: 40px;
+    background-color: #1A5268;
+    color: white;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+}
+.input input{
+    height: 40px;
+    width: 300px;
+    background: transparent;
+    border: 2px solid #1A5268;
+    color: white;
+    font-weight: 100;
+    padding-left: 10px;
+    border-radius: 0 5px 5px 0;
+    transition: all 0s ease-in-out;
+}
+.input input:focus{
+    border-color: rgba(0, 175, 240, 0.9);
+    outline: none;
+}
+.input-container:focus-within .icon {
+    background-color: rgba(0, 175, 240, 0.9);
+    color: #252a2e;
+}
+.eyeicon{
+    font-size: 1.3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -35px;
+    cursor: pointer;
+    opacity: 0.2;
+}
+.eyeicon:hover{
+    opacity: 0.4;
+}
+.hint{
+    margin-top: 0;
+    color: white;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    font-weight: 200;
+    margin-top: -25px;
+    text-align: center;
+}
+.forgotpass{
+    text-align: right;
+}
+.forgotpass a{
+    text-decoration: none;
+    color: #1A5268;
+    transition: all 0.2s ease-in-out;
+}
+.portal button{
+    width: 340px;
+    padding: 0.5rem 0;
+    background-color: #1A5268;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin: 2rem 0;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+.portal>p{
+    color: white;
+    text-align: center;
+}
+.portal>p span{
+    color: #1A5268;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+form a:hover, .portal>p span:hover{
+    color: rgba(0, 175, 240, 0.9);
+}
+.portal button:hover{
+    background-color: rgba(0, 175, 240, 0.9);
+}
