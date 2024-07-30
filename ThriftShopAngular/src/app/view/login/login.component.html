@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="container">
+    <div class="signin">
+        <h2>
+            {{loginTitle}}
+        </h2>
+        <div class="portal">
+            <form action="">
+                <div class="input-container">
+                    <div class="input">
+                        <i class="pi pi-user icon"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input">
+                        <i class="pi pi-lock icon"></i>
+                        <input (focus)="onPasswordFocus()" (blur)="onPasswordBlur()" type="{{passwordTextType}}" placeholder="Password" minlength="8" maxlength="32" required>
+                        <i *ngIf="!isPasswordVisible" (click)="onShowPasswordClicked()" class="pi pi-eye-slash eyeicon"></i>
+                        <i *ngIf="isPasswordVisible" (click)="onHidePasswordClicked()" class="pi pi-eye eyeicon"></i>
+                    </div>
+                    <p *ngIf="isPasswordFocus && isSignupClicked" class="hint">{{hintText}}</p>
+                </div>
+                <div class="input-container">
+                    <div *ngIf="isSignupClicked" class="input">
+                        <i class="pi pi-lock icon"></i>
+                        <input type="{{confirmPasswordTextType}}" placeholder="Confirm Password" minlength="8" maxlength="32" required>
+                        <i *ngIf="!isConfirmPasswordVisible" (click)="onShowConfirmPasswordClicked()" class="pi pi-eye-slash eyeicon"></i>
+                        <i *ngIf="isConfirmPasswordVisible" (click)="onHideConfirmPasswordClicked()" class="pi pi-eye eyeicon"></i>
+                    </div>
+                </div>
+                
+                <p class="forgotpass" *ngIf="!isSignupClicked"><a href="">Forgot password?</a></p>
+                <button>{{loginTitle}}</button>
+            </form>
+            <p>{{userStateText}}<span (click)="onSignupClicked()">{{toggleTitle}}</span></p>
+        </div>
+    </div>
+</div>
