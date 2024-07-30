@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  loginTitle: string = "Sign in";
+  loginTitle: string = "Login";
   userStateText: string = "New user? ";
   toggleTitle: string = "Sign up";
   isSignupClicked: boolean = false;
@@ -29,13 +29,18 @@ export class LoginComponent {
   onSignupClicked() {
     if (!this.isSignupClicked) {
       this.isSignupClicked = true;
+      this.isPasswordVisible = false;
+      this.passwordTextType = "password";
       this.loginTitle = "Sign up";
       this.userStateText = "Existing user? ";
-      this.toggleTitle = "Sign in";
+      this.toggleTitle = "Login";
     }
     else {
       this.isSignupClicked = false;
-      this.loginTitle = "Sign in";
+      this.isPasswordVisible = false;
+      this.passwordTextType = "password"
+      this.isConfirmPasswordVisible = false;
+      this.loginTitle = "Login";
       this.userStateText = "New user? ";
       this.toggleTitle = "Sign up";
     }

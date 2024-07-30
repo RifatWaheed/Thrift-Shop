@@ -1,7 +1,10 @@
 <div class="container">
     <div class="signin">
-        <h2>
-            {{loginTitle}}
+        <h2 *ngIf="!isSignupClicked">
+            Sign in
+        </h2>
+        <h2 *ngIf="isSignupClicked">
+            Sign up
         </h2>
         <div class="portal">
             <form action="">
