@@ -7,6 +7,9 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
+input[type="password"]::-ms-reveal {
+    display: none;
+}
 //================================= Primeng DropDown Changes =================================================
 .custom-dropdown .p-dropdown-label {
     height: 27px;
@@ -234,3 +237,4 @@ body {
 .table-column-buttons .pi{
     font-size: 0.8rem;
 }
+

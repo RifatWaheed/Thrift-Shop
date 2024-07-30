@@ -115,9 +115,10 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-form a:hover, .portal>p span:hover{
+.forgotpass a:hover, .portal>p span:hover{
     color: rgba(0, 175, 240, 0.9);
 }
 .portal button:hover{
     background-color: rgba(0, 175, 240, 0.9);
 }
+

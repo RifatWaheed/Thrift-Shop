@@ -7,7 +7,7 @@
             Sign up
         </h2>
         <div class="portal">
-            <form action="">
+            <div>
                 <div class="input-container">
                     <div class="input">
                         <i class="pi pi-user icon"></i>
@@ -17,7 +17,7 @@
                 <div class="input-container">
                     <div class="input">
                         <i class="pi pi-lock icon"></i>
-                        <input (focus)="onPasswordFocus()" (blur)="onPasswordBlur()" type="{{passwordTextType}}" placeholder="Password" minlength="8" maxlength="32" required>
+                        <input [(ngModel)]="password" (focus)="onPasswordFocus()" (blur)="onPasswordBlur()" type="{{passwordTextType}}" placeholder="Password" minlength="8" maxlength="32" required>
                         <i *ngIf="!isPasswordVisible" (click)="onShowPasswordClicked()" class="pi pi-eye-slash eyeicon"></i>
                         <i *ngIf="isPasswordVisible" (click)="onHidePasswordClicked()" class="pi pi-eye eyeicon"></i>
                     </div>
@@ -34,7 +34,7 @@
                 
                 <p class="forgotpass" *ngIf="!isSignupClicked"><a href="">Forgot password?</a></p>
                 <button>{{loginTitle}}</button>
-            </form>
+            </div>
             <p>{{userStateText}}<span (click)="onSignupClicked()">{{toggleTitle}}</span></p>
         </div>
     </div>
