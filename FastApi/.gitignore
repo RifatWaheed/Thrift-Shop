@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Secret environment variables
+.env
+
+# Package dependencies
+*.egg-info/
+*.eggs/
+*.egg
+
+# Distribution / packaging
+build/
+dist/
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+.nox/
