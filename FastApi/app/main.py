@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from app.contacInfo import models as contactInfoModel
 from app.contacInfo import contactInfo as contacInfoApi
 from app.products import products as productsApi
+from app.users import users as usersApi
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
 
@@ -21,6 +22,8 @@ contactInfoModel.Base.metadata.create_all(bind=engine)
 
 app.include_router(contacInfoApi.router)
 app.include_router(productsApi.router)
+app.include_router(usersApi.router)
+
 
 
 @app.get("/")
