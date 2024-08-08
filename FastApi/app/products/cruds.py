@@ -26,7 +26,7 @@ def updateProduct(db : Session, product: schemas.Product):
 def saveProduct(db: Session, product: schemas.Product):
     responseObj = None
     if(product.pkID>0):
-        responseObj = createProduct(db,product)
-    else:
         responseObj = updateProduct(db,product)
+    else:
+        responseObj = createProduct(db,product)
     return responseObj

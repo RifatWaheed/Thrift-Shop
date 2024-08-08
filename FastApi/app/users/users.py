@@ -15,6 +15,11 @@ def getAllUsers(db: Session = Depends(get_db) ):
     dbResp = db.query(models.users).all()
     if not dbResp:
         raise HTTPException(status_code=404, detail=f"No data found")
-    
     resp = [schemas.UserResponse.model_validate(i) for i in dbResp]
     return resp
+
+
+@router.post('/createUser', response_model= schemas.UserResponse)
+def createUser(req : schemas.User , db: Session = Depends(get_db)):
+    resp = cruds.saveUser(req,db)
+    
