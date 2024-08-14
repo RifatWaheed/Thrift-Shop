@@ -7,6 +7,7 @@ from app.users import users as usersApi
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
 
+
 app = FastAPI()
 
 
@@ -23,7 +24,6 @@ contactInfoModel.Base.metadata.create_all(bind=engine)
 app.include_router(contacInfoApi.router)
 app.include_router(productsApi.router)
 app.include_router(usersApi.router)
-
 
 
 @app.get("/")

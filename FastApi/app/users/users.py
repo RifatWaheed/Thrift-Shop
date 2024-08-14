@@ -2,11 +2,13 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 from passlib.context import CryptContext
-from app.database import get_db
-from . import models, schemas
-from app.users import cruds
+from .. database import get_db
+from . import models
+from . import schemas
+from . import cruds
+from passlib.context import CryptContext
 
-
+pwd_context = CryptContext(schemes=["bcrypt"],deprecated = "auto")
 router = APIRouter(prefix="/users", tags=["users"])
 
 
