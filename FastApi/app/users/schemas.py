@@ -32,3 +32,4 @@ class UserResponse(PydanticBaseModel):
     
     class Config:
         from_attributes = True
+

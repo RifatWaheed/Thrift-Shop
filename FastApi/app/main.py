@@ -1,15 +1,17 @@
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, status, HTTPException
 from app.contacInfo import models as contactInfoModel
 from app.contacInfo import contactInfo as contacInfoApi
 from app.products import products as productsApi
 from app.users import users as usersApi
+from app.users import auth as authApi
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
 
 
 app = FastAPI()
 
+app.include_router(authApi.router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,6 +23,7 @@ app.add_middleware(
 
 contactInfoModel.Base.metadata.create_all(bind=engine)
 
+app.include_router(usersApi.router)
 app.include_router(contacInfoApi.router)
 app.include_router(productsApi.router)
 app.include_router(usersApi.router)

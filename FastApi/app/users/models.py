@@ -3,12 +3,13 @@ from sqlalchemy import Column, Integer, String, BigInteger, Boolean, DateTime
 from sqlalchemy.sql import func
 
 
-class users(Base):
+class Users(Base):
     __tablename__ = 'users'
     
     pkID = Column(Integer, primary_key=True, index=True)
     userName = Column(String, unique=True, nullable=True)
     password = Column(String, nullable=False)
+    role = Column(Integer, nullable=True)
     email = Column(String, unique=True, nullable=False)
     createdDate = Column(DateTime, default=func.now(), nullable=False)
     lastPassswords = Column(String, nullable=True)

@@ -16,3 +16,6 @@ dnspython
 idna
 click
 python-dotenv
+python-jose[cryptography]
+python-multipart
+passlib
