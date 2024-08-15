@@ -2,6 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
+class UserDB {
+  email: string;
+  password: string;
+  confirmPassword?: string;
+}
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -21,8 +27,13 @@ export class LoginComponent {
   isConfirmPasswordVisible: boolean = false;
 
   isPasswordFocus: boolean = false;
-  password : string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
   hintText: string = "Required 1 uppercase, 1 digit and 8 characters min";
+
+  users: UserDB[] = [];
+
   constructor() {
 
   }
@@ -45,7 +56,8 @@ export class LoginComponent {
       this.userStateText = "New user? ";
       this.toggleTitle = "Sign up";
     }
-    this.password  = '';
+    this.password = '';
+    this.confirmPassword = '';
   }
 
   onShowPasswordClicked() {
@@ -72,4 +84,77 @@ export class LoginComponent {
   onPasswordBlur() {
     this.isPasswordFocus = false;
   }
+
+  validate(user: UserDB): boolean {
+    let hasAttherate = false;
+    let emailValid = false;
+
+    let hasUppercase = false;
+    let hasDigit = false;
+
+    if (!user.email || !user.password || !user.confirmPassword) {
+      return false;
+    }
+    for (let i = 0; i < user.email.length; i++) {
+      if (user.email.charAt(i) === "@") {
+        hasAttherate = true;
+      }
+    }
+    if (hasAttherate) {
+      const emailParts = user.email.split('@');
+      const emailDomain = emailParts.length === 2 ? emailParts[1] : '';
+      emailValid = emailDomain === 'gmail.com' || emailDomain === 'yahoo.com';
+    }
+    else {
+      return false;
+    }
+
+    for (let i = 0; i < user.password.length; i++) {
+      if (user.password.charAt(i) >= "A" && user.password.charAt(i) <= "Z") {
+        hasUppercase = true;
+      }
+      else if (user.password.charAt(i) >= "0" && user.password.charAt(i) <= "9") {
+        hasDigit = true;
+      }
+      else {
+        hasUppercase = false;
+        hasDigit = false;
+      }
+    }
+    const passwordLength = user.password.length >= 8 && user.password.length <= 16;
+    const passwordValid = passwordLength && hasUppercase && hasDigit;
+
+    const passwordMatch = user.password === user.confirmPassword;
+
+    // Combine all conditions
+    const allConditionsValid = emailValid && passwordValid && passwordMatch;
+
+    if (!emailValid) {
+      //Email Invalid
+    }
+    if (!passwordValid) {
+      //Password Invalid
+    }
+    if (!passwordMatch) {
+      //Password & confirm password mismatch
+    }
+
+    return allConditionsValid
+  }
+
+  onSubmit() {
+    if (this.loginTitle === "Sign up") {
+      const newUser = new UserDB();
+      newUser.email = this.email;
+      newUser.password = this.password;
+      newUser.confirmPassword = this.confirmPassword;
+      if (this.validate(newUser)) {
+        // this.users.push(newUser);
+      }
+      else {
+        console.log("Feild are blank")
+      }
+    }
+  }
+
 }
