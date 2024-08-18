@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 
 class UserDB {
@@ -11,9 +13,10 @@ class UserDB {
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ToastModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  providers: [MessageService]
 })
 export class LoginComponent {
   loginTitle: string = "Login";
@@ -34,8 +37,10 @@ export class LoginComponent {
 
   users: UserDB[] = [];
 
-  constructor() {
+  constructor(
+    private messageService: MessageService,
 
+  ) {
   }
 
   onSignupClicked() {
@@ -86,26 +91,82 @@ export class LoginComponent {
   }
 
   validate(user: UserDB): boolean {
-    let hasAttherate = false;
+    let hasAtTheRate = false;
     let emailValid = false;
 
     let hasUppercase = false;
     let hasDigit = false;
 
-    if (!user.email || !user.password || !user.confirmPassword) {
+    if (!user.email) {
+      this.messageService.add({
+        key: 'tc',
+        life: 1000,
+        severity: 'warn',
+        summary: 'Invalid E-mail',
+        detail: 'Please enter an e-mail',
+      });
       return false;
     }
+
+    if (!user.password) {
+      this.messageService.add({
+        key: 'tc',
+        life: 1000,
+        severity: 'warn',
+        summary: 'Invalid Password',
+        detail: 'Please enter a password',
+      });
+      return false;
+    }
+
+    if (!user.confirmPassword) {
+      this.messageService.add({
+        key: 'tc',
+        life: 1000,
+        severity: 'warn',
+        summary: 'Confirm Password Empty',
+        detail: "Confirm Password can't be empty",
+      });
+      return false;
+    }
+
+    // for(let i =0; i<user.email.length; i++){
+    //   if(user.email[i] === '@' ){
+    //     hasAtTheRate = true;
+    //     break;
+    //   }
+    // }
+
+    // if(!hasAtTheRate){
+    //   this.messageService.add({
+    //     key: 'tc',
+    //     life: 1000,
+    //     severity: 'Error',
+    //     summary: 'Invalid Email',
+    //     detail: "Please Enter a valid Email",
+    //   });
+    //   return false;
+    // }
+
+
     for (let i = 0; i < user.email.length; i++) {
       if (user.email.charAt(i) === "@") {
-        hasAttherate = true;
+        hasAtTheRate = true;
       }
     }
-    if (hasAttherate) {
+    if (hasAtTheRate) {
       const emailParts = user.email.split('@');
       const emailDomain = emailParts.length === 2 ? emailParts[1] : '';
       emailValid = emailDomain === 'gmail.com' || emailDomain === 'yahoo.com';
     }
     else {
+      this.messageService.add({
+        key: 'tc',
+        life: 1000,
+        severity: 'error',
+        summary: 'Invalid Email',
+        detail: "Please Enter a valid Email",
+      });
       return false;
     }
 

@@ -7,7 +7,8 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive,ButtonModule],
   templateUrl: './admin-panel.component.html',
-  styleUrl: './admin-panel.component.scss'
+  styleUrl: './admin-panel.component.scss',
+
 })
 export class AdminPanelComponent implements OnInit {
 
