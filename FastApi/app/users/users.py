@@ -10,8 +10,8 @@ from passlib.context import CryptContext
 router = APIRouter(prefix="/users", tags=["users"])
 
 
-@router.get('/getAllUsers' , response_model= List[schemas.UserResponse])
-def getAllUsers(db: Session = Depends(get_db) ):
+@router.get('/getAllUsers' , response_model=List[schemas.UserResponse])
+def getAllUsers(db: Session = Depends(get_db)):
     dbResp = db.query(models.Users).all()
     if not dbResp:
         raise HTTPException(status_code=404, detail=f"No data found")
@@ -19,7 +19,7 @@ def getAllUsers(db: Session = Depends(get_db) ):
     return resp
 
 
-@router.post('/createUser', response_model= schemas.UserResponse)
-def createUser(req : schemas.User , db: Session = Depends(get_db)):
-    resp = cruds.saveUser(req,db)
-    
+@router.post("/createUser", response_model=schemas.UserResponse)
+def create_user(user: schemas.User, db: Session = Depends(get_db)):
+    db_user = cruds.saveUser(user, db)
+    return db_user

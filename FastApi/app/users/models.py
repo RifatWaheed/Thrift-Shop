@@ -6,7 +6,7 @@ from sqlalchemy.sql import func
 class Users(Base):
     __tablename__ = 'users'
     
-    pkID = Column(Integer, primary_key=True, index=True)
+    pkID = Column(Integer, primary_key=True, autoincrement=True)
     userName = Column(String, unique=True, nullable=True)
     password = Column(String, nullable=False)
     role = Column(Integer, nullable=True)

@@ -11,7 +11,7 @@ from app.database import engine
 
 app = FastAPI()
 
-app.include_router(authApi.router)
+# app.include_router(authApi.router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,10 +23,9 @@ app.add_middleware(
 
 contactInfoModel.Base.metadata.create_all(bind=engine)
 
-app.include_router(usersApi.router)
+# app.include_router(usersApi.router)
 app.include_router(contacInfoApi.router)
 app.include_router(productsApi.router)
-app.include_router(usersApi.router)
 
 
 @app.get("/")
