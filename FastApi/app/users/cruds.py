@@ -7,6 +7,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 def createUser(req: schemas.User, db: Session):
     userDict = req.model_dump()
     pkID = userDict.get('pkID')
+    userDict['password'] = auth.pwd_context.hash(userDict['password'])
 
     if not pkID or pkID == 0:  # Checks for None or 0
         userDict.pop('pkID', None)
