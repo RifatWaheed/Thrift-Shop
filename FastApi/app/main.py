@@ -7,7 +7,7 @@ from app.users import users as usersApi
 from app.users import auth as authApi
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
-
+import uvicorn
 
 app = FastAPI()
 
@@ -23,7 +23,7 @@ app.add_middleware(
 
 contactInfoModel.Base.metadata.create_all(bind=engine)
 
-# app.include_router(usersApi.router)
+app.include_router(usersApi.router)
 app.include_router(contacInfoApi.router)
 app.include_router(productsApi.router)
 
@@ -32,4 +32,5 @@ app.include_router(productsApi.router)
 def read_root():
     return {"Hello": "World"}
 
-
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
